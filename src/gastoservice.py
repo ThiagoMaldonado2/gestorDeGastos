@@ -20,7 +20,10 @@ class GastoService:
         # Si no se pasa un archivo, usa la ruta por defecto en la carpeta data
         if archivo_csv is None:
             base_dir = os.path.dirname(os.path.dirname(__file__))  # Sube un nivel desde src
-            self.archivo_csv = os.path.join(base_dir, "data", "gastos.csv")
+            data_dir = os.path.join(base_dir, "data")
+            if not os.path.exists(data_dir):
+                os.makedirs(data_dir)  # Crea la carpeta data si no existe
+            self.archivo_csv = os.path.join(data_dir, "gastos.csv")
         else:
             self.archivo_csv = archivo_csv
 
