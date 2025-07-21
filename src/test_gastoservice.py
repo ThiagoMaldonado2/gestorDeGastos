@@ -1,6 +1,6 @@
 import unittest
 import os
-from gastoservice import GastoService
+from src.gastoservice import GastoService
 
 class TestGastoService(unittest.TestCase):
     def setUp(self):
