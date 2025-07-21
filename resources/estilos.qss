@@ -1,0 +1,51 @@
+QMainWindow {
+    background-color: #f5f5f5;
+}
+
+QLabel {
+    font-size: 14px;
+    color: #222;
+}
+
+QPushButton {
+    background-color: #2E8B57;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+QPushButton:hover {
+    background-color: #249150;
+}
+
+QLineEdit, QComboBox, QDateEdit {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+QTableWidget {
+    background-color: #fff;
+    border: 1px solid #bbb;
+    font-size: 13px;
+}
+
+QHeaderView::section {
+    background-color: #2E8B57;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    border: none;
+    padding: 4px;
+}
+
+QGroupBox {
+    border: 1px solid #2E8B57;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
