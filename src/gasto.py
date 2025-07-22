@@ -4,3 +4,4 @@ class Gasto:
         self.descripcion = descripcion
         self.monto = monto
         self.categoria = categoria
+    

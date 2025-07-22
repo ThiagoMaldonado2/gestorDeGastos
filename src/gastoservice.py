@@ -86,9 +86,10 @@ class GastoService:
 
         Args:
             index (int): índice del gasto a actualizar
-            fecha (str): nueva fecha del gasto en formato YYYY-MM-DD (opcional)
-            descripcion (str): nueva descripción del gasto (opcional)
-            monto (float): nuevo monto del gasto (opcional)
+            fecha (str): nueva fecha del gasto
+            descripcion (str): nueva descripción del gasto
+            monto (float): nuevo monto del gasto
+            categoria (str): nueva categoría del gasto
 
         Returns:
             Gasto: objeto Gasto actualizado
@@ -97,14 +98,10 @@ class GastoService:
             IndexError: si el índice está fuera de rango
         """
         if 0 <= index < len(self.df):
-            if fecha:
-                self.df.at[index, 'fecha'] = fecha
-            if descripcion:
-                self.df.at[index, 'descripcion'] = descripcion
-            if monto is not None:
-                self.df.at[index, 'monto'] = monto
-            if categoria:
-                self.df.at[index, 'categoria'] = categoria
+            self.df.at[index, 'fecha'] = fecha
+            self.df.at[index, 'descripcion'] = descripcion
+            self.df.at[index, 'monto'] = monto
+            self.df.at[index, 'categoria'] = categoria
             self.df.to_csv(self.archivo_csv, index=False)
             row = self.df.iloc[index]
             return Gasto(row['fecha'], row['descripcion'], row['monto'], row['categoria'])
